@@ -1,47 +1,61 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { useRoute } from 'vue-router'
+
+// const route = useRoute()
+// watch(
+//   () => route.params.id,
+//   (newId, oldId) => {
+//     // react to changes
+//     // handy to use when switching between /users/johnny to /users/janine
+//   }
+// )
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <nav>
+      <h1>Moonlight Guide</h1>
+      <RouterLink to="/moon-mood/" class="nav-item"> Moon </RouterLink>
+      <RouterLink to="/"> Go home </RouterLink>
+      <RouterLink to="/tarot/"> Tarot </RouterLink>
+    </nav>
+
+    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+      <HelloWorld msg="Hoorah!" />
+    </div> -->
   </header>
 
   <main>
-    <TheWelcome />
+    <div name="content-grid">
+      <router-view></router-view>
+      Content goes here
+    </div>
   </main>
 </template>
 
 <style scoped>
+.nav-item:active {
+  background-color: aliceblue;
+}
+
 header {
   line-height: 1.5;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
   header .wrapper {
     display: flex;
+    flex-direction: column;
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>

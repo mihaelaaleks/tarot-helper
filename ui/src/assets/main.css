@@ -33,3 +33,23 @@ a,
     padding: 0 2rem;
   }
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.dropdown-content {
+  align-items: baseline;
+}
+
+.dropdown-content.dropdown-content {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-btn {
+  padding: 2rem;
+}
